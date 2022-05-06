@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.produits.entities.Categorie;
 import com.example.produits.entities.Produit;
+import com.example.produits.repos.CategorieRepository;
 import com.example.produits.repos.ProduitRepository;
 
 @Service
@@ -88,4 +89,8 @@ public List<Produit> findByNomPrix(String nom, Double prix) {
 	public List<Produit> trierProduitsNomsPrix() {
 	return produitRepository.trierProduitsNomsPrix();
 	}
+	
+	
+	
+	
 }

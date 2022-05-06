@@ -1,6 +1,6 @@
 package com.example.produits;
 
-import java.util.Date;
+
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -108,7 +108,7 @@ class ProduitsApplicationTests {
 	 @Test
 	 public void findByCategorieIdCat()
 	 {
-	 List<Produit> prods = produitRepository.findByCategorieIdCat(1L);
+	 List<Produit> prods = produitRepository.findByCategorieIdCat(2L);
 	 for (Produit p : prods)
 	 {
 	 System.out.println(p);

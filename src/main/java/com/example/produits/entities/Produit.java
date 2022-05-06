@@ -92,7 +92,7 @@ public class Produit {
 		this.nomProduit = nomProduit;
 		this.prixProduit = prixProduit;
 		this.dateCreation = dateCreation;
-		this.categorie = categorie;
+		this.setCategorie(categorie);
 	}
 
 	public Long getIdProduit() {

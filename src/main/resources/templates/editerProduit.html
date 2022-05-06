@@ -43,6 +43,17 @@
 							<span th:errors=${produit.dateCreation} class="text-danger">
 							</span>
 						</div>
+						<div class="form-group">
+							<label class="control-label">Categorie :</label>
+							<select type="text" name="categorie" class="form-control"
+								th:value="${produit.categorie.idCat}">
+								<option th:each="c:${categories}" th:if="${mode=='edit'}" th:value="${c.idCat}"
+									th:text="${c.nomCat}" th:selected="${ c.idCat==produit.categorie.idCat}"></option>
+
+								<option th:each="c:${categories}" th:if="${mode=='new'}" th:value="${c.idCat}"
+									th:text="${c.nomCat}"></option>
+							</select>
+						</div>
 						<div>
 							<button type="submit" class="btn btn-primary">Valider</button>
 						</div>

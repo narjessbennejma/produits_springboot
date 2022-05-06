@@ -25,4 +25,5 @@ private String descriptionCat;
 @OneToMany(mappedBy = "categorie")
 private List<Produit> produits;
 
+
 }

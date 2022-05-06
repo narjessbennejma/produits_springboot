@@ -6,7 +6,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Liste des Produits</title>
+	<title>Liste des Categories</title>
 </head>
 
 <body>
@@ -16,33 +16,31 @@
 
 			<div class="card">
 				<div class="card-header">
-					Liste des Produits
+					Liste des Categories
 				</div>
 				<div class="card-body">
 					<table class="table table-striped">
 						<tr>
 							<th>ID</th>
-							<th>Nom Produit</th>
-							<th>Prix</th>
-							<th>Date Creation</th>
-							<th>Categories </th>
+							<th>Description</th>
+							<th>Nom Categorie</th>
+							
+							
 
 
 
 
 						</tr>
-						<tr th:each="p:${produits.content}">
-							<td th:text="${p.idProduit}"></td>
-							<td th:text="${p.nomProduit}"></td>
-							<td th:text="${p.prixProduit}"></td>
-							<td th:text="${p.dateCreation}"></td>
-
-							<td th:text="${p.categorie.nomCat}"></td>
+						<tr th:each="c:${categories.content}">
+							<td th:text="${c.idCat}"></td>
+							<td th:text="${c.descriptionCat}"></td>
+							<td th:text="${c.nomCat}"></td>
+							
 
 
-							<td><a class="btn btn-success" th:href="@{modifierProduit(id=${p.idProduit})}">Editer</a>
+							<td><a class="btn btn-success" th:href="@{modifierCategorie(id=${c.idCat})}">Editer</a>
 							</td>
-							<td><a class="btn btn-danger" onclick="return confirm('Etes-vous sûr ?')" th:href="@{supprimerProduit(id=${p.idProduit}, 
+							<td><a class="btn btn-danger" onclick="return confirm('Etes-vous sûr ?')" th:href="@{supprimerCategories(id=${c.idCat}, 
 							     page=${currentPage},size=${size})}">Supprimer</a></td>
 
 						</tr>
@@ -50,7 +48,7 @@
 					<ul class="nav nav-pills">
 						<li th:each="page,status:${pages}">
 							<a th:class="${status.index==currentPage?'btn btn-primary':'btn' }"
-								th:href="@{ ListeProduits(page=${status.index}, size=${size} ) }"
+								th:href="@{ ListeCategorie(page=${status.index}, size=${size} ) }"
 								th:text="${status.index }"></a>
 						</li>
 					</ul>

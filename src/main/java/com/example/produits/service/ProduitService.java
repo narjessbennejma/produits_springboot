@@ -22,4 +22,5 @@ List<Produit> findByCategorieIdCat(Long id);
 List<Produit> findByOrderByNomProduitAsc();
 List<Produit> trierProduitsNomsPrix();
 Page<Produit> getAllProduitsParPage(int i, int j);
+
 }
